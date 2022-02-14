@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IPTreatmentOfferingService.Model
+namespace IPTreatmentService.Model
 {
+    public enum AilmentCategory
+    {
+        Orthopaedics,
+        Urology
+    }
     public class IPTreatmentPackage
     {
         public int TreatmentPackageID { get; set; }
-        public enum AilmentCategory
-        {
-            Orthopaedics,
-            Urology
-        }
+       
         public AilmentCategory Ailment { get; set; }
         public string TreatmentPackageName { get; set; }
         public string TestDetails { get; set; }

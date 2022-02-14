@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\AuthorizationService",
-    "\\SpecialistDetails"
+    "\\IPTreatmentOfferingService",
+    "\\IPTreatmentOfferingService\\IPTreatmentOfferingService",
+    "\\IPTreatmentOfferingService\\IPTreatmentOfferingService\\Repository"
   ],
-  "SelectedNode": "\\SpecialistDetails\\SpecialistDetails.sln",
+  "SelectedNode": "\\IPTreatmentOfferingService\\IPTreatmentOfferingService\\Repository\\IPTreatmentPackageRepo.cs",
   "PreviewInSolutionExplorer": false
 }

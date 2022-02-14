@@ -30,7 +30,21 @@ namespace IPTreatmentService.Controllers
 
         }
 
-        
+        [HttpPost]
+        [Route("api/[Controller]/[action]")]
+        public IActionResult FormulateTreatmentTimetable(PatientDetail patient)
+        {
+            try
+            {
+                var obj = _treatmentobj.GetTreatmentPlan(patient);
+
+                return Ok(obj);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500);
+            }
+        }
 
     }
 }

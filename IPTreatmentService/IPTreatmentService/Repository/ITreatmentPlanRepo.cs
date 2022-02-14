@@ -9,5 +9,6 @@ namespace IPTreatmentService.Repository
     public interface ITreatmentPlanRepo
     {
         public List<TreatmentPlan> GetDetails();
+        public TreatmentPlan GetTreatmentPlan(PatientDetail patient);
     }
 }

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "U0+9dyNekKAoVeSWsB43Cr0F/iSMPF8KXPeJFXcFT0INlexsiEBKUY6qW17GZ5B9rAc8YxSrw3jJ+N1Ulr1klQ==",
+  "dgSpecHash": "MNjycJCk1JJyfS+0qE5OxYWhQ0GZAtW23QS9jeMhW75wMIBKHSoRkes7uLTO6h4MEg84TF5zxUg6l4tl7hnhOg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Himanshu\\Desktop\\new\\Treatment\\Treatment\\IPTreatmentService.csproj",
+  "projectFilePath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Himanshu\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Himanshu\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Himanshu\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Himanshu\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\Himanshu\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "C:\\Users\\Himanshu\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",

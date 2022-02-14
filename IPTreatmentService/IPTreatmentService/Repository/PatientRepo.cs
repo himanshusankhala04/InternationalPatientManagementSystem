@@ -15,10 +15,8 @@ namespace IPTreatmentService.Repository
             {
                 Name = "Name1",
                 Age = 20,
-                Ailment= true,
-
+                Ailment= AilmentCategory.Orthopaedics,
                 TreatmentPackageName = "Package1",
-
                 TreatmentCommencementDate = DateTime.Now,
             }
         };

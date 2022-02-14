@@ -14,7 +14,7 @@ namespace IPTreatmentOfferingService.Repository
             new IPTreatmentPackage
             {
                 TreatmentPackageID=1,
-                AilmentCategory1=AilmentCategory.Orthopaedics,
+                Ailment=AilmentCategory.Orthopaedics,
                 TreatmentPackageName="Package 1",
                 TestDetails="OPT 1,OPT 2",
                 Cost=2500,
@@ -23,7 +23,7 @@ namespace IPTreatmentOfferingService.Repository
             new IPTreatmentPackage
             {
                 TreatmentPackageID=2,
-                AilmentCategory1=AilmentCategory.Urology,
+                Ailment=AilmentCategory.Urology,
                 TreatmentPackageName="Package 2",
                 TestDetails="OPT 3,OPT 4",
                 Cost=4000,
@@ -32,7 +32,7 @@ namespace IPTreatmentOfferingService.Repository
             new IPTreatmentPackage
             {
                 TreatmentPackageID=1,
-                AilmentCategory1=AilmentCategory.Orthopaedics,
+                Ailment=AilmentCategory.Orthopaedics,
                 TreatmentPackageName="Package 1",
                 TestDetails="OPT 1,OPT 2",
                 Cost=3000,
@@ -41,7 +41,7 @@ namespace IPTreatmentOfferingService.Repository
             new IPTreatmentPackage
             {
                 TreatmentPackageID=1,
-                AilmentCategory1=AilmentCategory.Urology,
+                Ailment=AilmentCategory.Urology,
                 TreatmentPackageName="Package 2",
                 TestDetails="OPT 1,OPT 2",
                 Cost=5000,

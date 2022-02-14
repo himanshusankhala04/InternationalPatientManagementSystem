@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static IPTreatmentOfferingService.Model.IPTreatmentPackage;
 
-namespace IPTreatmentOfferingService.Model
+namespace IPTreatmentService.Model
 {
     public class SpecialistDetails
     {
