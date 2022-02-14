@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = InsuranceClaimService
-build_property.ProjectDir = C:\Users\2064571\InternationalPatientManagementSystem\InternationalPatientManagementSystem\InsuranceClaimService\InsuranceClaimService\
+build_property.ProjectDir = D:\CODE\dockerDemo\Project\InternationalPatientManagementSystem\InsuranceClaimService\InsuranceClaimService\

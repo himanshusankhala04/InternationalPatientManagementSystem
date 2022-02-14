@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Himanshu\\source\\repos\\AuthorizationService\\AuthorizationService\\AuthorizationService.csproj": {}
+    "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\AuthorizationService\\AuthorizationService\\AuthorizationService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Himanshu\\source\\repos\\AuthorizationService\\AuthorizationService\\AuthorizationService.csproj": {
+    "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\AuthorizationService\\AuthorizationService\\AuthorizationService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Himanshu\\source\\repos\\AuthorizationService\\AuthorizationService\\AuthorizationService.csproj",
+        "projectUniqueName": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\AuthorizationService\\AuthorizationService\\AuthorizationService.csproj",
         "projectName": "AuthorizationService",
-        "projectPath": "C:\\Users\\Himanshu\\source\\repos\\AuthorizationService\\AuthorizationService\\AuthorizationService.csproj",
+        "projectPath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\AuthorizationService\\AuthorizationService\\AuthorizationService.csproj",
         "packagesPath": "C:\\Users\\Himanshu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Himanshu\\source\\repos\\AuthorizationService\\AuthorizationService\\obj\\",
+        "outputPath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\AuthorizationService\\AuthorizationService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -42,9 +42,21 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.15.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.15.1, )"
             }
           },
           "imports": [

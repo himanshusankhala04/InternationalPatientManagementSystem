@@ -1,12 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\InsuranceClaimService",
-    "\\IPtreatmentmanagementPortal",
-    "\\IPTreatmentOfferingService",
-    "\\IPTreatmentService",
-    "\\LoginService"
+    "\\AuthorizationService",
+    "\\SpecialistDetails"
   ],
-  "SelectedNode": "\\InsuranceClaimService",
+  "SelectedNode": "\\SpecialistDetails\\SpecialistDetails.sln",
   "PreviewInSolutionExplorer": false
 }
