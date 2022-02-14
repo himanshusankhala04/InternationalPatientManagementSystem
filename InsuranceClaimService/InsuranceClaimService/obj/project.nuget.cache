@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "YCrmVLlPv4znu+3IYjUJx0yKRJX16DxBLpeV6aNS78u55Al8512l7/17VZLE9RBUtnn1+3eC5z6n9LgKRna2wA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Himanshu\\source\\repos\\FinalProjectPOD3\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Himanshu\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Himanshu\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Himanshu\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Himanshu\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\Himanshu\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\Himanshu\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\Himanshu\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
