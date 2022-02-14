@@ -199,11 +199,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentOfferingService\\IPTreatmentOfferingService.csproj",
-      "projectName": "IPTreatmentOfferingService",
-      "projectPath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentOfferingService\\IPTreatmentOfferingService.csproj",
+      "projectUniqueName": "C:\\Users\\Himanshu\\source\\repos\\AuthorizationService\\AuthorizationService\\AuthorizationService.csproj",
+      "projectName": "AuthorizationService",
+      "projectPath": "C:\\Users\\Himanshu\\source\\repos\\AuthorizationService\\AuthorizationService\\AuthorizationService.csproj",
       "packagesPath": "C:\\Users\\Himanshu\\.nuget\\packages\\",
-      "outputPath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentOfferingService\\obj\\",
+      "outputPath": "C:\\Users\\Himanshu\\source\\repos\\AuthorizationService\\AuthorizationService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -236,11 +236,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Himanshu\\source\\repos\\FinalProjectPOD3\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj",
+      "projectUniqueName": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj",
       "projectName": "InsuranceClaimService",
-      "projectPath": "C:\\Users\\Himanshu\\source\\repos\\FinalProjectPOD3\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj",
+      "projectPath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj",
       "packagesPath": "C:\\Users\\Himanshu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Himanshu\\source\\repos\\FinalProjectPOD3\\InsuranceClaimService\\InsuranceClaimService\\obj\\",
+      "outputPath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\InsuranceClaimService\\InsuranceClaimService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

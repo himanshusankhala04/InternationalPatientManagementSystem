@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YCrmVLlPv4znu+3IYjUJx0yKRJX16DxBLpeV6aNS78u55Al8512l7/17VZLE9RBUtnn1+3eC5z6n9LgKRna2wA==",
+  "dgSpecHash": "chjrNpEFW/K87PlO6r3bCdbCe2gttNhZZGGij/0fvGehuW1Li/GMOhfj23iYdhkpM89ha0t4QhNAWCf9H6W2cA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Himanshu\\source\\repos\\FinalProjectPOD3\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj",
+  "projectFilePath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Himanshu\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Himanshu\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
