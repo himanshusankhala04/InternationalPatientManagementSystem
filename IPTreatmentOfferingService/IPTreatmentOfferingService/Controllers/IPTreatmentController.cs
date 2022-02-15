@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static IPTreatmentOfferingService.Model.IPTreatmentPackage;
 
 namespace IPTreatmentOfferingService.Controllers
 {
@@ -21,7 +22,7 @@ namespace IPTreatmentOfferingService.Controllers
         }
 
         [HttpGet]
-        [Route("api/[Controller]/[action]")]
+        [Route("[action]")]
         public IActionResult IPTreatmentPackages()
         {
             try
@@ -35,13 +36,33 @@ namespace IPTreatmentOfferingService.Controllers
             }
         }
         [HttpGet]
-        [Route("api/[Controller]/[action]/{Name}")]
-        public IActionResult IPTreatmentPackageByName(string Name)
+        [Route("[action]/{Name}")]
+        public IActionResult IPTreatmentPackageByName(string name)
         {
             try
             {
 
-                var detail = _iPTreatmentPackageRepo.GetDteailsByName(Name);
+                var detail = _iPTreatmentPackageRepo.GetDteailsByName(name);
+                if (detail != null)
+                    return Ok(detail);
+                else
+                    return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
+        }
+
+        //added
+        [HttpGet]
+        [Route("[action]/{name}/{ailment}")]
+        public IActionResult IPTreatmentPackageByNameAndAilment(string name, AilmentCategory ailment)
+        {
+            try
+            {
+
+                var detail = _iPTreatmentPackageRepo.GetDteailsByNameAndAilment(name, ailment);
                 if (detail != null)
                     return Ok(detail);
                 else

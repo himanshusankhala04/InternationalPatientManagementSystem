@@ -23,7 +23,7 @@ namespace IPTreatmentOfferingService.Repository
             new IPTreatmentPackage
             {
                 TreatmentPackageID=2,
-                Ailment=AilmentCategory.Urology,
+                Ailment=AilmentCategory.Orthopaedics,
                 TreatmentPackageName="Package 2",
                 TestDetails="OPT 3,OPT 4",
                 Cost=4000,
@@ -32,7 +32,7 @@ namespace IPTreatmentOfferingService.Repository
             new IPTreatmentPackage
             {
                 TreatmentPackageID=1,
-                Ailment=AilmentCategory.Orthopaedics,
+                Ailment=AilmentCategory.Urology,
                 TreatmentPackageName="Package 1",
                 TestDetails="OPT 1,OPT 2",
                 Cost=3000,
@@ -53,13 +53,17 @@ namespace IPTreatmentOfferingService.Repository
             return _iPTreatmentPackages;
         }
 
-        public IPTreatmentPackage GetDteailsByName(String Name)
+        public IPTreatmentPackage GetDteailsByName(String name)
         {
-            var obj = _iPTreatmentPackages.FirstOrDefault(x => x.TreatmentPackageName.ToLower() == Name.ToLower());
-            if(obj == null)
-            {
-                return null;
-            }
+            var obj = _iPTreatmentPackages.FirstOrDefault(x => x.TreatmentPackageName.ToLower() == name.ToLower());
+            
+            return obj;
+        }
+
+        public IPTreatmentPackage GetDteailsByNameAndAilment(string name, AilmentCategory ailment)
+        {
+            var obj = _iPTreatmentPackages.FirstOrDefault(x => x.TreatmentPackageName.ToLower() == name.ToLower() && x.Ailment == ailment);
+            
             return obj;
         }
     }

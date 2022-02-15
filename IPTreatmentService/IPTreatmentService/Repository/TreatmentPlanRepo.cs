@@ -12,64 +12,46 @@ namespace IPTreatmentService.Repository
     {
         String baseAddress = "http://localhost:25257/api/";
         HttpClient client;
+
+        private List<TreatmentPlan> treatmentPlan;
         public TreatmentPlanRepo()
         {
             client = new HttpClient();
+            if(treatmentPlan == null)
+            {
+                this.Initialize();
+            }
+            
         }
 
-        private List<TreatmentPlan> treatmentplan = new List<TreatmentPlan>()
+        public void Initialize()
         {
-            new TreatmentPlan
+            treatmentPlan = new List<TreatmentPlan>()
             {
-                PackageName = "Package 1",
-                TestDetails = "OPT1, OPT2",
-                Cost= 2000,
-                Specialist = "SName1",
-                Ailment = AilmentCategory.Orthopaedics,
-                TreatmentCommencementDate = DateTime.Now,
-                TreatmentEndDate= DateTime.Today,
-            },
-            new TreatmentPlan
-            {
-                PackageName = "Package 1",
-                TestDetails = "OPT3, OPT4",
-                Cost= 2500,
-                Specialist = "SName3",
-                Ailment = AilmentCategory.Urology,
-                TreatmentCommencementDate = DateTime.Now,
-                TreatmentEndDate= DateTime.Today
-            },
-            new TreatmentPlan
-            {
-                PackageName = "Package 2",
-                TestDetails = "OPT1, OPT2",
-                Cost= 3000,
-                Specialist = "SName1",
-                Ailment = AilmentCategory.Orthopaedics,
-                TreatmentCommencementDate = DateTime.Now,
-                TreatmentEndDate= DateTime.Today,
-            },
-            new TreatmentPlan
-            {
-                PackageName = "Package 2",
-                TestDetails = "OPT3, OPT4",
-                Cost= 3500,
-                Specialist = "SName3",
-                Ailment = AilmentCategory.Urology,
-                TreatmentCommencementDate = DateTime.Now,
-                TreatmentEndDate= DateTime.Today
-            },
-        };
+                new TreatmentPlan
+                {
+                    PackageName = "Package 1",
+                    TestDetails = "OPT1, OPT2",
+                    Cost= 2000,
+                    Specialist = "SName1",
+                    Ailment = AilmentCategory.Orthopaedics,
+                    TreatmentCommencementDate = DateTime.Now,
+                    TreatmentEndDate= DateTime.Today,
+                },
+
+            };
+        }
+
         public List<TreatmentPlan> GetDetails()
         {
-            return treatmentplan;
+            return treatmentPlan;
         }
 
         public TreatmentPlan GetTreatmentPlan(PatientDetail patient)
         {
             IPTreatmentPackage treatmentPackage;
             SpecialistDetails specialist;
-            HttpResponseMessage response = client.GetAsync(baseAddress + "IPTreatment/api/IPTreatment/IPTreatmentPackageByName/"+ patient.TreatmentPackageName).Result;
+            HttpResponseMessage response = client.GetAsync(baseAddress + "IPTreatment/IPTreatmentPackageByNameAndAilment/"+ patient.TreatmentPackageName +"/" + patient.Ailment).Result;
             if (response.IsSuccessStatusCode)
             {
                 string data = response.Content.ReadAsStringAsync().Result;
@@ -88,7 +70,7 @@ namespace IPTreatmentService.Repository
                 throw new Exception();
             }
 
-            HttpResponseMessage response2 = client.GetAsync(baseAddress + "IPTreatment/api/IPTreatment//api/SpecialistDetails/").Result;
+            HttpResponseMessage response2 = client.GetAsync(baseAddress + "SpecialistDetails/").Result;
             if (response.IsSuccessStatusCode)
             {
                 string data = response2.Content.ReadAsStringAsync().Result;
@@ -97,10 +79,10 @@ namespace IPTreatmentService.Repository
 
                 if (treatmentPackage.TreatmentPackageName == "Package 1")
                 {
-                    specialist = specialistDetails.FirstOrDefault(x => x.ExperienceInYears >= 7 && x.AreaOfExpertise == treatmentPackage.Ailment);
+                    specialist = specialistDetails.FirstOrDefault(x => x.ExperienceInYears <= 8 && x.AreaOfExpertise == treatmentPackage.Ailment);
                 }else
                 {
-                    specialist = specialistDetails.FirstOrDefault(x => x.ExperienceInYears <= 7 && x.AreaOfExpertise == treatmentPackage.Ailment);
+                    specialist = specialistDetails.FirstOrDefault(x => x.ExperienceInYears > 8 && x.AreaOfExpertise == treatmentPackage.Ailment);
                 }
                 if (specialist == null)
                 {
@@ -123,7 +105,8 @@ namespace IPTreatmentService.Repository
                 TreatmentCommencementDate = patient.TreatmentCommencementDate,
                 TreatmentEndDate = patient.TreatmentCommencementDate.AddDays(treatmentPackage.TreatmentDuration * 7),
             };
-
+            this.treatmentPlan.Add(plan);
+            
             return plan;
         }
     }

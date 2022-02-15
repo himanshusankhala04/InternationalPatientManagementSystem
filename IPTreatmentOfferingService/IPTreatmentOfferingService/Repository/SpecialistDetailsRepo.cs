@@ -14,7 +14,7 @@ namespace IPTreatmentOfferingService.Repository
             new SpecialistDetails
             {
                 Specialist_Id=1,
-                Name="Name 1",
+                Name="Specialist Name 1",
                 AreaOfExpertise=AilmentCategory.Orthopaedics,
                 ExperienceInYears=7,
                 ContactNumber=1234567890
@@ -22,7 +22,7 @@ namespace IPTreatmentOfferingService.Repository
             new SpecialistDetails
             {
                 Specialist_Id=2,
-                Name="Name 2",
+                Name="Specialist Name 2",
                 AreaOfExpertise=AilmentCategory.Urology,
                 ExperienceInYears=6,
                 ContactNumber=1234567890
@@ -30,7 +30,7 @@ namespace IPTreatmentOfferingService.Repository
             new SpecialistDetails
             {
                 Specialist_Id=3,
-                Name="Name 3",
+                Name="Specialist Name 3",
                 AreaOfExpertise=AilmentCategory.Orthopaedics,
                 ExperienceInYears=10,
                 ContactNumber=1234567890
@@ -38,7 +38,7 @@ namespace IPTreatmentOfferingService.Repository
             new SpecialistDetails
             {
                 Specialist_Id=4,
-                Name="Name 4",
+                Name="Specialist Name 4",
                 AreaOfExpertise = AilmentCategory.Urology,
                 ExperienceInYears=12,
                 ContactNumber=1234567890

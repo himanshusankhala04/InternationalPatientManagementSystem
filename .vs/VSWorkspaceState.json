@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\IPTreatmentOfferingService",
     "\\IPTreatmentOfferingService\\IPTreatmentOfferingService",
     "\\IPTreatmentOfferingService\\IPTreatmentOfferingService\\Repository"
   ],
-  "SelectedNode": "\\IPTreatmentOfferingService\\IPTreatmentOfferingService\\Repository\\IPTreatmentPackageRepo.cs",
+  "SelectedNode": "\\IPTreatmentOfferingService",
   "PreviewInSolutionExplorer": false
 }
