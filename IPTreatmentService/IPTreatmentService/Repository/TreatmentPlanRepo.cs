@@ -103,7 +103,7 @@ namespace IPTreatmentService.Repository
                 Specialist = specialist.Name,
                 Ailment = patient.Ailment,
                 TreatmentCommencementDate = patient.TreatmentCommencementDate,
-                TreatmentEndDate = patient.TreatmentCommencementDate.AddDays(treatmentPackage.TreatmentDuration * 7),
+                TreatmentEndDate = patient.TreatmentCommencementDate.AddDays((treatmentPackage.TreatmentDuration * 7)),
             };
             this.treatmentPlan.Add(plan);
             
