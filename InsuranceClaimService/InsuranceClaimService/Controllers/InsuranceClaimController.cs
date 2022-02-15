@@ -21,6 +21,7 @@ namespace InsuranceClaimService.Controllers
 
         //get all the Insurer details
         [HttpGet]
+        [Route("[action]")]
         public IActionResult GetAllInsurerDetail()
         {
             try
@@ -36,6 +37,7 @@ namespace InsuranceClaimService.Controllers
 
         //get the Insurer details by name
         [HttpGet("{insurerPackageName}")]
+        [Route("[action]")]
         public IActionResult GetInsurerByPackageName(String insurerPackageName)
         {
             try
@@ -54,13 +56,14 @@ namespace InsuranceClaimService.Controllers
         }
 
         [HttpPost]
-        public ActionResult<int> InitiateClaim(InitiateClaim initiateClaim)
+        [Route("[action]")]
+        public IActionResult InitiateClaim(InitiateClaim initiateClaim)
         {
             try
             {
                 int balance = _insuranceDetailsobj.GetBalanceAmount(initiateClaim);
                 
-                return balance;
+                return Ok(balance);
             }
             catch (Exception e)
             {

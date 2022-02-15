@@ -22,7 +22,7 @@ namespace AuthorizationService.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult Login([FromBody] AdminDetails admin)
+        public ActionResult<String> Login(AdminDetails admin)
         {
 
             IActionResult response = Unauthorized();
@@ -30,7 +30,7 @@ namespace AuthorizationService.Controllers
             if (obj != null)
             {
                 var tokenString = _authRepo.GenerateJSONWebToken(admin);
-                response = Ok(new { token = tokenString });
+                response = tokenString;
             }
             return response;
         }
