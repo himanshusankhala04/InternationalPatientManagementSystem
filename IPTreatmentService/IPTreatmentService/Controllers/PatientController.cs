@@ -23,6 +23,7 @@ namespace IPTreatmentService.Controllers
 
 
         [HttpGet]
+        [Route(["action"])]
         public IActionResult GetPatientDetails()
         {
             List<PatientDetail> list = _patientobj.GetDetails();

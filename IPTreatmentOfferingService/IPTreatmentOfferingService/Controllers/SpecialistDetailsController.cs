@@ -21,6 +21,7 @@ namespace IPTreatmentOfferingService.Controllers
             
         }
         [HttpGet]
+        [Route("[action]")]
         public IActionResult GetAllSpecialistDetails()
         {
             try
