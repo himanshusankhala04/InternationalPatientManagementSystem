@@ -3,10 +3,8 @@
     "",
     "\\InsuranceClaimService",
     "\\IPtreatmentmanagementPortal",
-    "\\IPTreatmentOfferingService",
     "\\IPTreatmentService",
     "\\LoginService"
   ],
-  "SelectedNode": "\\InsuranceClaimService",
   "PreviewInSolutionExplorer": false
 }
