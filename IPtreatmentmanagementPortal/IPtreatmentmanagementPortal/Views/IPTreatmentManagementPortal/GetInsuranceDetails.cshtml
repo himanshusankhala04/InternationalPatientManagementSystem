@@ -1,0 +1,66 @@
+﻿@model IEnumerable<IPtreatmentmanagementPortal.Model.InsurerDetails>
+
+@{
+    ViewData["Title"] = "GetInsuranceDetails";
+}
+
+<h1>GetInsuranceDetails</h1>
+
+
+@{ if (ViewBag.msg != null)
+    {
+        @ViewBag.msg
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.InsurerId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.InsurerName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.InsurerPackageName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.InsuranceAmountLimit)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DisbursementDuration)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.InsurerId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.InsurerName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.InsurerPackageName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.InsuranceAmountLimit)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DisbursementDuration)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}

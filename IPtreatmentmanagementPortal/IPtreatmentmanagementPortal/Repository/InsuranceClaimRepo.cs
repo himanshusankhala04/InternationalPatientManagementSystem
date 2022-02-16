@@ -11,6 +11,7 @@ namespace IPtreatmentmanagementPortal.Repository
     public class InsuranceClaimRepo : IInsuranceClaimRepo
     {
         HttpClient client;
+        String baseAddress = "https://localhost:44354/api/InsuranceClaimController/";
         public InsuranceClaimRepo()
         {
             client = new HttpClient();
@@ -18,7 +19,7 @@ namespace IPtreatmentmanagementPortal.Repository
 
         public List<InsurerDetails> GetAllInsurerDetails()
         {
-            String baseAddress = "https://localhost:44354/api/InsuranceClaimController/";
+           
 
             HttpResponseMessage response = client.GetAsync(baseAddress + "GetAllInsurerDetail").Result;
             List<InsurerDetails> insuranceDetails;

@@ -1,12 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\IPTreatmentOfferingService\\IPTreatmentOfferingService",
-    "\\IPTreatmentOfferingService\\IPTreatmentOfferingService\\Repository",
-    "\\IPTreatmentService",
-    "\\IPTreatmentService\\IPTreatmentService",
-    "\\IPTreatmentService\\IPTreatmentService\\Repository"
+    "\\AuthorizationService",
+    "\\InsuranceClaimService",
+    "\\IPtreatmentmanagementPortal",
+    "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal",
+    "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal\\Controllers",
+    "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal\\Views",
+    "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal\\Views\\IPTreatmentManagementPortal"
   ],
-  "SelectedNode": "\\IPTreatmentService\\IPTreatmentService\\Repository\\TreatmentPlanRepo.cs",
+  "SelectedNode": "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal\\Views\\IPTreatmentManagementPortal\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
