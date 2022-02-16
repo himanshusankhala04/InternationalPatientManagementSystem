@@ -7,6 +7,7 @@ using AuthorizationService.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,9 +30,6 @@ namespace AuthorizationService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddControllers();
-
             services.AddScoped<IAdminDetailsRepo, AdminDetailsRepo>();
             services.AddScoped<AuthRepo>();
 
@@ -50,6 +48,7 @@ namespace AuthorizationService
                   };
               });
 
+            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AuthorizationService", Version = "v1" });
@@ -65,9 +64,8 @@ namespace AuthorizationService
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AuthorizationService v1"));
             }
-            app.UseHttpsRedirection();
 
-            app.UseAuthentication();
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 

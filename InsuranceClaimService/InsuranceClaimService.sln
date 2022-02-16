@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.32002.261
+VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceClaimService", "InsuranceClaimService\InsuranceClaimService.csproj", "{9C3FD287-4903-4664-84D3-D627120DBCE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceClaimService", "InsuranceClaimService\InsuranceClaimService.csproj", "{B077D401-F5A0-4D3E-AEBB-2AE3398A9563}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9C3FD287-4903-4664-84D3-D627120DBCE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C3FD287-4903-4664-84D3-D627120DBCE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C3FD287-4903-4664-84D3-D627120DBCE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C3FD287-4903-4664-84D3-D627120DBCE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B077D401-F5A0-4D3E-AEBB-2AE3398A9563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B077D401-F5A0-4D3E-AEBB-2AE3398A9563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B077D401-F5A0-4D3E-AEBB-2AE3398A9563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B077D401-F5A0-4D3E-AEBB-2AE3398A9563}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {73209969-7AA4-46AA-A9E3-FBC0F7B2DF2E}
+		SolutionGuid = {650EC438-157D-40A1-A4A3-B2C595AD37E5}
 	EndGlobalSection
 EndGlobal

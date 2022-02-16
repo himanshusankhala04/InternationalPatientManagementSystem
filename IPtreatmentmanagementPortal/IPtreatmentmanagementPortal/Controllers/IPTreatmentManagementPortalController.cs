@@ -12,12 +12,12 @@ namespace IPtreatmentmanagementPortal.Controllers
     public class IPTreatmentManagementPortalController : Controller
     {
         private readonly IInsuranceClaimRepo _insuranceClaimRepo;
-        private readonly IIPTreatmentOffering _treatmentOffering;
-        private readonly IIPTreatment _treatment;
+        private readonly IIPTreatmentOfferingRepo _treatmentOffering;
+        private readonly IIPTreatmentRepo _treatment;
 
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly ISession _session;
-        public IPTreatmentManagementPortalController(IHttpContextAccessor httpContextAccessor, IInsuranceClaimRepo insuranceClaimRepo, IIPTreatmentOffering treatmentOffering, IIPTreatment treatment)
+        public IPTreatmentManagementPortalController(IHttpContextAccessor httpContextAccessor, IInsuranceClaimRepo insuranceClaimRepo, IIPTreatmentOfferingRepo treatmentOffering, IIPTreatmentRepo treatment)
         {
             _httpContextAccessor = httpContextAccessor;
             _session = _httpContextAccessor.HttpContext.Session;
@@ -34,75 +34,77 @@ namespace IPtreatmentmanagementPortal.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<InsurerDetails>> GetInsuranceDetails()
+        public async Task<ActionResult<List<InsurerDetails>>> GetInsuranceDetails()
         {
             
-            //var obj = _insuranceClaimRepo.GetAllInsurerDetails();
-            //if(obj != null)
-            //{
-            //    return View(obj);
-            //}
-            //else {
+            var obj = _insuranceClaimRepo.GetAllInsurerDetails();
+            if(obj != null)
+            {
+                return View(await obj);
+            }
+            else {
                 ViewBag.msg = "Data not found!";
                 return View();
-            //}
+            }
         }
 
 
         [HttpGet]
         public async Task<ActionResult<List<SpecialistDetails>>> GetSpecialistDetails()
         {
-            //return  View(await _treatmentOffering.GetAllSpecialistDetails());
-            //if(obj != null)
-            //{
-            //    return View(obj);
-            //}
-            //else {
-            ViewBag.msg = "Data not found!";
-            return View();
-            //}
+            var obj = _treatmentOffering.GetAllSpecialistDetails();
+            if(obj != null)
+            {
+                return View(await obj);
+            }
+            else {
+                ViewBag.msg = "Data not found!";
+                return View();
+            }
         }
 
         [HttpGet]
-        public ActionResult<List<IPTreatmentPackage>> GetTreatmentPackages()
+        public async Task<ActionResult<List<IPTreatmentPackage>>> GetTreatmentPackages()
         {
-            //return View(_treatmentOffering.GetAllIPTreatmentPackages());
-            //if(obj != null)
-            //{
-            //    return View(obj);
-            //}
-            //else {
-            ViewBag.msg = "Data not found!";
-            return View();
-            //}
+            var obj = _treatmentOffering.GetAllIPTreatmentPackages();
+            if(obj != null)
+            {
+                return View(await obj);
+            }
+            else {
+                ViewBag.msg = "Data not found!";
+                return View();
+            }
         }
 
         [HttpGet]
-        public ActionResult<List<PatientDetails>> GetPatientDetails()
+        public async Task<ActionResult<List<PatientDetails>>> GetPatientDetails()
         {
-            //return View(_treatment.GetAllPatientDetails());
-            //if(obj != null)
-            //{
-            //    return View(obj);
-            //}
-            //else {
-            ViewBag.msg = "Data not found!";
-            return View();
-            //}
+            var obj =  _treatment.GetAllPatientDetails();
+            if(obj != null)
+            {
+                return View(await obj);
+            }
+            else {
+                ViewBag.msg = "Data not found!";
+                return View();
+            }
         }
 
+       
+
         [HttpGet]
-        public ActionResult<List<TreatmentPlan>> GetTreatmentPlans()
+        public async Task<ActionResult<List<TreatmentPlan>>> GetTreatmentPlans()
         {
-            //return View(_treatment.GetAllTreatmentDetails());
-            //if(obj != null)
-            //{
-            //    return View(obj);
-            //}
-            //else {
-            ViewBag.msg = "Data not found!";
-            return View();
-            //}
+            var obj =  _treatment.GetAllTreatmentDetails();
+            if(obj != null)
+            {
+                return View(await obj);
+            }
+            else {
+                ViewBag.msg = "Data not found!";
+                return View();
+            }
         }
 
     }

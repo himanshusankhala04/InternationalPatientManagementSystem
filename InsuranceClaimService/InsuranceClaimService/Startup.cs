@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using InsuranceClaimService.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,11 +27,9 @@ namespace InsuranceClaimService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IInsurerDetailsRepo, InsurerDetailsRepo>();
 
             services.AddControllers();
-
-            services.AddScoped<IInsurerDetailsRepo, InsurerDetailsRepo>();
-          
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "InsuranceClaimService", Version = "v1" });
@@ -46,6 +45,8 @@ namespace InsuranceClaimService
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "InsuranceClaimService v1"));
             }
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 

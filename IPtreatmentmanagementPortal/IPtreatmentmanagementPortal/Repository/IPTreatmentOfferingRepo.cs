@@ -10,39 +10,28 @@ using Newtonsoft.Json;
 
 namespace IPtreatmentmanagementPortal.Repository
 {
-    public class IPTreatmentOffering : IIPTreatmentOffering
+    public class IPTreatmentOfferingRepo : IIPTreatmentOfferingRepo
     {
         HttpClient client;
         
-        public IPTreatmentOffering()
+        public IPTreatmentOfferingRepo()
         {
-            HttpClientHandler clientHandler = new HttpClientHandler();
-            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
-            client = new HttpClient(clientHandler);
+           client = new HttpClient();
         }
 
-        public List<IPTreatmentPackage> GetAllIPTreatmentPackages()
+        public async Task<List<IPTreatmentPackage>> GetAllIPTreatmentPackages()
         {
-            String baseAddress = "https://localhost:25257/api/IPTreatment/";
-            client.BaseAddress = new Uri(baseAddress);
+            String baseAddress = "https://localhost:44350/api/IPTreatment/";
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.GetAsync("IPTreatmentPackages").Result;
+            HttpResponseMessage response = await client.GetAsync(baseAddress+"IPTreatmentPackages");
 
-            List<IPTreatmentPackage> treatmentPackages;
 
             if (response.IsSuccessStatusCode)
             {
-                string data = response.Content.ReadAsStringAsync().Result;
 
-                treatmentPackages = JsonConvert.DeserializeObject<List<IPTreatmentPackage>>(data);
-
-                if (treatmentPackages == null)
-                {
-                    throw new Exception();
-                }
-                return treatmentPackages;
+                return await response.Content.ReadAsAsync<List<IPTreatmentPackage>>();
             }
             else
             {
@@ -52,12 +41,11 @@ namespace IPtreatmentmanagementPortal.Repository
 
         public async Task<List<SpecialistDetails>> GetAllSpecialistDetails()
         {
-            String baseAddress = "https://localhost:25257/api/SpecialistDetails/";
-            client.BaseAddress = new Uri(baseAddress);
+            String baseAddress = "https://localhost:44350/api/SpecialistDetails/";
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = await client.GetAsync("GetAllSpecialistDetails");
+            HttpResponseMessage response = await client.GetAsync(baseAddress+"GetAllSpecialistDetails");
 
             if (response.IsSuccessStatusCode)
             {

@@ -6,10 +6,10 @@ using IPtreatmentmanagementPortal.Model;
 
 namespace IPtreatmentmanagementPortal.Repository
 {
-    public interface IIPTreatment
+    public interface IIPTreatmentRepo
     {
-        public List<PatientDetails> GetAllPatientDetails();
-        public List<TreatmentPlan> GetAllTreatmentDetails();
+        public Task<List<PatientDetails>> GetAllPatientDetails();
+        public Task<List<TreatmentPlan>> GetAllTreatmentDetails();
         public TreatmentPlan FormulateTreatmentTimetable(PatientDetails patient);
         
     }

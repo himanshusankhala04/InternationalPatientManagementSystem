@@ -41,7 +41,7 @@ namespace IPtreatmentmanagementPortal.Controllers
             if (success != null)
             {
                 ViewBag.Message = "User logged in successfully!";
-                return RedirectToAction("Index", "IPTreatmentManagementPortalController", new { area = ""});
+                return RedirectToAction("Index", "IPTreatmentManagementPortal", new { area = ""});
             }
             return View();
         }

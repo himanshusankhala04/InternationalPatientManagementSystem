@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj": {}
+    "C:\\Users\\Himanshu\\source\\repos\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj": {}
   },
   "projects": {
-    "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj": {
+    "C:\\Users\\Himanshu\\source\\repos\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj",
+        "projectUniqueName": "C:\\Users\\Himanshu\\source\\repos\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj",
         "projectName": "InsuranceClaimService",
-        "projectPath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj",
+        "projectPath": "C:\\Users\\Himanshu\\source\\repos\\InsuranceClaimService\\InsuranceClaimService\\InsuranceClaimService.csproj",
         "packagesPath": "C:\\Users\\Himanshu\\.nuget\\packages\\",
-        "outputPath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\InsuranceClaimService\\InsuranceClaimService\\obj\\",
+        "outputPath": "C:\\Users\\Himanshu\\source\\repos\\InsuranceClaimService\\InsuranceClaimService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

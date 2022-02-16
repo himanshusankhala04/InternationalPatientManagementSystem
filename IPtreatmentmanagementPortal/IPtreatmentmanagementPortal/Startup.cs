@@ -27,12 +27,11 @@ namespace IPtreatmentmanagementPortal
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ThisismySecretKey"));
 
             services.AddScoped<IInsuranceClaimRepo, InsuranceClaimRepo>();
             services.AddScoped<IAuthorizationRepo, AuthorizationRepo>();
-            services.AddScoped<IIPTreatmentOffering, IPTreatmentOffering>();
-            services.AddScoped<IIPTreatment, IPTreatment>();
+            services.AddScoped<IIPTreatmentOfferingRepo, IPTreatmentOfferingRepo>();
+            services.AddScoped<IIPTreatmentRepo, IPTreatmentRepo>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMemoryCache();
@@ -53,13 +52,13 @@ namespace IPtreatmentmanagementPortal
             }).AddJwtBearer(o => o.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
             {
                 ValidateIssuerSigningKey = true,
-                IssuerSigningKey = key,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"])),
 
                 ValidateIssuer = true,
-                ValidIssuer = "Test.com",
+                ValidIssuer = Configuration["Jwt:Issuer"],
 
                 ValidateAudience = true,
-                ValidAudience = "Test.com"
+                ValidAudience = Configuration["Jwt:Issuer"],
             });
 
             services.AddControllersWithViews();
@@ -88,7 +87,7 @@ namespace IPtreatmentmanagementPortal
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=IPtreatmentmanagementPortal}/{action=Index}/{id?}");
+                    pattern: "{controller=Login}/{action=Login}/{id?}");
             });
         }
     }

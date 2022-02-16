@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj": {}
+    "C:\\Users\\Himanshu\\source\\repos\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj": {}
   },
   "projects": {
-    "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj": {
+    "C:\\Users\\Himanshu\\source\\repos\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj",
+        "projectUniqueName": "C:\\Users\\Himanshu\\source\\repos\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj",
         "projectName": "IPTreatmentService",
-        "projectPath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj",
+        "projectPath": "C:\\Users\\Himanshu\\source\\repos\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj",
         "packagesPath": "C:\\Users\\Himanshu\\.nuget\\packages\\",
-        "outputPath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentService\\IPTreatmentService\\obj\\",
+        "outputPath": "C:\\Users\\Himanshu\\source\\repos\\IPTreatmentService\\IPTreatmentService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

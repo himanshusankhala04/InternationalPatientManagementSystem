@@ -20,6 +20,7 @@ namespace IPTreatmentService.Controllers
         }
 
         [HttpGet]
+        [Route("[action]")]
         public IActionResult GetTreatmentDetails()
         {
 

@@ -36,7 +36,7 @@ namespace InsuranceClaimService.Controllers
         }
 
         //get the Insurer details by name
-        [HttpGet("{insurerPackageName}")]
+        [HttpGet]
         [Route("[action]")]
         public IActionResult GetInsurerByPackageName(String insurerPackageName)
         {

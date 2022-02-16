@@ -11,31 +11,22 @@ namespace IPtreatmentmanagementPortal.Repository
     public class InsuranceClaimRepo : IInsuranceClaimRepo
     {
         HttpClient client;
-        String baseAddress = "https://localhost:44354/api/InsuranceClaimController/";
+        String baseAddress = "https://localhost:44332/api/InsuranceClaim/";
         public InsuranceClaimRepo()
         {
             client = new HttpClient();
         }
 
-        public List<InsurerDetails> GetAllInsurerDetails()
+        public async Task<List<InsurerDetails>> GetAllInsurerDetails()
         {
            
 
-            HttpResponseMessage response = client.GetAsync(baseAddress + "GetAllInsurerDetail").Result;
-            List<InsurerDetails> insuranceDetails;
+            HttpResponseMessage response = await client.GetAsync(baseAddress + "GetAllInsurerDetail");
+            
 
             if (response.IsSuccessStatusCode)
             {
-                string data = response.Content.ReadAsStringAsync().Result;
-
-                insuranceDetails = JsonConvert.DeserializeObject<List<InsurerDetails>>(data);
-
-                if (insuranceDetails == null)
-                {
-                    throw new Exception();
-                }
-
-                return insuranceDetails;
+                return await response.Content.ReadAsAsync<List<InsurerDetails>>();
             }
             else
             {
@@ -46,7 +37,7 @@ namespace IPtreatmentmanagementPortal.Repository
 
         public int GetBalanceAmmount(InitiateClaim initiateClaim)
         {
-            String baseAddress = "https://localhost:44354/api/InsuranceClaimController/";
+            String baseAddress = "https://localhost:44354/api/InsuranceClaim/";
 
             HttpResponseMessage response = client.GetAsync(baseAddress + "InitiateClaim").Result;
             int balance;

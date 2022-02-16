@@ -199,11 +199,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentOfferingService\\IPTreatmentOfferingService\\IPTreatmentOfferingService.csproj",
+      "projectUniqueName": "C:\\Users\\Himanshu\\source\\repos\\IPTreatmentOfferingService\\IPTreatmentOfferingService\\IPTreatmentOfferingService.csproj",
       "projectName": "IPTreatmentOfferingService",
-      "projectPath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentOfferingService\\IPTreatmentOfferingService\\IPTreatmentOfferingService.csproj",
+      "projectPath": "C:\\Users\\Himanshu\\source\\repos\\IPTreatmentOfferingService\\IPTreatmentOfferingService\\IPTreatmentOfferingService.csproj",
       "packagesPath": "C:\\Users\\Himanshu\\.nuget\\packages\\",
-      "outputPath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentOfferingService\\IPTreatmentOfferingService\\obj\\",
+      "outputPath": "C:\\Users\\Himanshu\\source\\repos\\IPTreatmentOfferingService\\IPTreatmentOfferingService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

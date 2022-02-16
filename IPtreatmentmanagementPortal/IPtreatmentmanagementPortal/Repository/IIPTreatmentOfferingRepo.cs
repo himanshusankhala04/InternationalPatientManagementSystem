@@ -6,9 +6,9 @@ using IPtreatmentmanagementPortal.Model;
 
 namespace IPtreatmentmanagementPortal.Repository
 {
-     public interface IIPTreatmentOffering
+     public interface IIPTreatmentOfferingRepo
     {
-        public List<IPTreatmentPackage> GetAllIPTreatmentPackages();
+        public Task<List<IPTreatmentPackage>> GetAllIPTreatmentPackages();
         public IPTreatmentPackage GetIPTreatmentPackageByName(string name);
         public IPTreatmentPackage GetIPTreatmentPackageByNameAndAilment(string name, AilmentCategory ailment);
         public Task<List<SpecialistDetails>> GetAllSpecialistDetails();

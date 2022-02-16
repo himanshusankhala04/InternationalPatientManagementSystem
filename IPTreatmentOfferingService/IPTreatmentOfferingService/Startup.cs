@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using IPTreatmentOfferingService.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,12 +28,10 @@ namespace IPTreatmentOfferingService
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
-
             services.AddScoped<SpecialistDetailsRepo, SpecialistDetailsRepo>();
             services.AddScoped<IPTreatmentPackageRepo, IPTreatmentPackageRepo>();
 
-
+            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "IPTreatmentOfferingService", Version = "v1" });
@@ -48,6 +47,8 @@ namespace IPTreatmentOfferingService
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "IPTreatmentOfferingService v1"));
             }
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 

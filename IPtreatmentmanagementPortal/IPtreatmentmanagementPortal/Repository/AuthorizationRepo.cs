@@ -41,13 +41,12 @@ namespace IPtreatmentmanagementPortal.Repository
         public string LoginService(AdminDetails admin)
         {
             StringContent content = new StringContent(JsonConvert.SerializeObject(admin), Encoding.UTF8, "application/json");
-            string endpoint = "https://localhost:47681/api/Auth/login";
+            string endpoint = "https://localhost:44335/api/Auth/login";
             client.BaseAddress = new Uri(endpoint);
             var contentType = new MediaTypeWithQualityHeaderValue("application/json");
             client.DefaultRequestHeaders.Accept.Add(contentType);
             var Response = client.PostAsync(endpoint, content);
-            try
-            {
+            
                 var result = Response.Result;
                 if (result.IsSuccessStatusCode)
                 {
@@ -59,11 +58,7 @@ namespace IPtreatmentmanagementPortal.Repository
                 }
                 else
                     return null;
-            }
-            catch(Exception e)
-            {
-                return null;
-            }
+            
             
         }
     }

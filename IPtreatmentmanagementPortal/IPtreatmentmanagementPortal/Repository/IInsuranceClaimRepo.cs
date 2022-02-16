@@ -8,7 +8,7 @@ namespace IPtreatmentmanagementPortal.Repository
 {
     public interface IInsuranceClaimRepo
     {
-        public List<InsurerDetails> GetAllInsurerDetails();
+        public Task<List<InsurerDetails>> GetAllInsurerDetails();
         public InsurerDetails GetInsurerByPackageName(String insurerPackageName);
         public int GetBalanceAmmount(InitiateClaim initiateClaim);
     }
