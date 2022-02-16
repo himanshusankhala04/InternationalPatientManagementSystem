@@ -70,7 +70,7 @@ namespace IPTreatmentService.Repository
                 throw new Exception();
             }
 
-            HttpResponseMessage response2 = client.GetAsync(baseAddress + "SpecialistDetails/").Result;
+            HttpResponseMessage response2 = client.GetAsync(baseAddress + "SpecialistDetails/GetAllSpecialistDetails").Result;
             if (response.IsSuccessStatusCode)
             {
                 string data = response2.Content.ReadAsStringAsync().Result;

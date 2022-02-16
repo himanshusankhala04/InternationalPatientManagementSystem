@@ -11,6 +11,6 @@ namespace IPtreatmentmanagementPortal.Repository
         public List<IPTreatmentPackage> GetAllIPTreatmentPackages();
         public IPTreatmentPackage GetIPTreatmentPackageByName(string name);
         public IPTreatmentPackage GetIPTreatmentPackageByNameAndAilment(string name, AilmentCategory ailment);
-        public List<SpecialistDetails> GetAllSpecialistDetails();
+        public Task<List<SpecialistDetails>> GetAllSpecialistDetails();
     }
 }

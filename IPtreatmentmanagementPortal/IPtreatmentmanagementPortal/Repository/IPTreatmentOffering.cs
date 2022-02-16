@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using IPtreatmentmanagementPortal.Model;
+using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
 namespace IPtreatmentmanagementPortal.Repository
@@ -11,16 +13,23 @@ namespace IPtreatmentmanagementPortal.Repository
     public class IPTreatmentOffering : IIPTreatmentOffering
     {
         HttpClient client;
+        
         public IPTreatmentOffering()
         {
-            client = new HttpClient();
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            client = new HttpClient(clientHandler);
         }
 
         public List<IPTreatmentPackage> GetAllIPTreatmentPackages()
         {
-            String baseAddress = "https://localhost:44354/api/IPTreatmentOfferingService";
+            String baseAddress = "https://localhost:25257/api/IPTreatment/";
+            client.BaseAddress = new Uri(baseAddress);
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.GetAsync(baseAddress + "IPTreatmentPackages").Result;
+            HttpResponseMessage response = client.GetAsync("IPTreatmentPackages").Result;
+
             List<IPTreatmentPackage> treatmentPackages;
 
             if (response.IsSuccessStatusCode)
@@ -41,24 +50,19 @@ namespace IPtreatmentmanagementPortal.Repository
             }
         }
 
-        public List<SpecialistDetails> GetAllSpecialistDetails()
+        public async Task<List<SpecialistDetails>> GetAllSpecialistDetails()
         {
-            String baseAddress = "https://localhost:44354/api/IPTreatmentOfferingService";
+            String baseAddress = "https://localhost:25257/api/SpecialistDetails/";
+            client.BaseAddress = new Uri(baseAddress);
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.GetAsync(baseAddress + "GetAllSpecialistDetails").Result;
-            List<SpecialistDetails> specialists;
+            HttpResponseMessage response = await client.GetAsync("GetAllSpecialistDetails");
 
             if (response.IsSuccessStatusCode)
             {
-                string data = response.Content.ReadAsStringAsync().Result;
-
-                specialists = JsonConvert.DeserializeObject<List<SpecialistDetails>>(data);
-
-                if (specialists == null)
-                {
-                    throw new Exception();
-                }
-                return specialists;
+                
+                return await response.Content.ReadAsAsync<List<SpecialistDetails>>();
             }
             else
             {
