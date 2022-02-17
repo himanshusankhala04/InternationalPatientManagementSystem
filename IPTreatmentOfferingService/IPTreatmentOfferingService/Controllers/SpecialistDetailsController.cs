@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using IPTreatmentOfferingService.Model;
 using IPTreatmentOfferingService.Repository;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IPTreatmentOfferingService.Controllers
 {
@@ -22,6 +23,7 @@ namespace IPTreatmentOfferingService.Controllers
         }
         [HttpGet]
         [Route("[action]")]
+        [Authorize]
         public IActionResult GetAllSpecialistDetails()
         {
             try

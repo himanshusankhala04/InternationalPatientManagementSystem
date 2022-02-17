@@ -15,15 +15,11 @@ namespace AuthorizationService.Repository
                             UserName = "user1",
                             Password = "user1"
                         },
+                        
                         new AdminDetails
                         {
-                            UserName = "user2",
-                            Password = "user2"
-                        },
-                        new AdminDetails
-                        {
-                            UserName = "user3",
-                            Password = "user3"
+                            UserName = "admin1",
+                            Password = "pass1"
                         },
                     };
         

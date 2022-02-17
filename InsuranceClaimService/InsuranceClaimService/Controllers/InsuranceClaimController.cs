@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using InsuranceClaimService.Model;
 using InsuranceClaimService.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InsuranceClaimService.Controllers
@@ -22,6 +23,7 @@ namespace InsuranceClaimService.Controllers
         //get all the Insurer details
         [HttpGet]
         [Route("[action]")]
+        [Authorize]
         public IActionResult GetAllInsurerDetail()
         {
             try
@@ -38,6 +40,7 @@ namespace InsuranceClaimService.Controllers
         //get the Insurer details by name
         [HttpGet]
         [Route("[action]")]
+        [Authorize]
         public IActionResult GetInsurerByPackageName(String insurerPackageName)
         {
             try
@@ -57,6 +60,7 @@ namespace InsuranceClaimService.Controllers
 
         [HttpPost]
         [Route("[action]")]
+        [Authorize]
         public IActionResult InitiateClaim(InitiateClaim initiateClaim)
         {
             try

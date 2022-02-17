@@ -36,12 +36,19 @@ namespace IPtreatmentmanagementPortal.Controllers
         [HttpPost]
         public IActionResult Login(AdminDetails admin)
         {
-            IActionResult response = Unauthorized();
-            String success = _authRepo.LoginService(admin);
-            if (success != null)
+            if (ViewBag != null)
             {
-                ViewBag.Message = "User logged in successfully!";
-                return RedirectToAction("Index", "IPTreatmentManagementPortal", new { area = ""});
+                ViewBag.msg = "<script> alert('Logged out!'); </script>";
+            }
+            if (ModelState.IsValid) { 
+                IActionResult response = Unauthorized();
+                String success = _authRepo.LoginService(admin);
+                if (success != null)
+                {
+                    ViewBag.Message = "Admin logged in successfully!";
+                    return RedirectToAction("Index", "IPTreatmentManagementPortal", new { area = ""});
+                }
+                
             }
             return View();
         }

@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using IPtreatmentmanagementPortal.Model;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 
 namespace IPtreatmentmanagementPortal.Repository
@@ -13,10 +14,16 @@ namespace IPtreatmentmanagementPortal.Repository
     public class IPTreatmentOfferingRepo : IIPTreatmentOfferingRepo
     {
         HttpClient client;
-        
-        public IPTreatmentOfferingRepo()
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly ISession _session;
+        private IConfiguration _Configure { get; set; }
+        public IPTreatmentOfferingRepo(IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
-           client = new HttpClient();
+            _httpContextAccessor = httpContextAccessor;
+            _session = _httpContextAccessor.HttpContext.Session;
+
+            _Configure = configuration;
+            client = new HttpClient();
         }
 
         public async Task<List<IPTreatmentPackage>> GetAllIPTreatmentPackages()
@@ -24,6 +31,8 @@ namespace IPtreatmentmanagementPortal.Repository
             String baseAddress = "https://localhost:44350/api/IPTreatment/";
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var token = _httpContextAccessor.HttpContext.Session.GetString("token");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
             HttpResponseMessage response = await client.GetAsync(baseAddress+"IPTreatmentPackages");
 
@@ -44,6 +53,8 @@ namespace IPtreatmentmanagementPortal.Repository
             String baseAddress = "https://localhost:44350/api/SpecialistDetails/";
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var token = _httpContextAccessor.HttpContext.Session.GetString("token");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
             HttpResponseMessage response = await client.GetAsync(baseAddress+"GetAllSpecialistDetails");
 

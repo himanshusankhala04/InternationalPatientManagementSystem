@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using IPtreatmentmanagementPortal.Model;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 
 namespace IPtreatmentmanagementPortal.Repository
@@ -11,18 +14,27 @@ namespace IPtreatmentmanagementPortal.Repository
     public class InsuranceClaimRepo : IInsuranceClaimRepo
     {
         HttpClient client;
-        String baseAddress = "https://localhost:44332/api/InsuranceClaim/";
-        public InsuranceClaimRepo()
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly ISession _session;
+        private IConfiguration _Configure { get; set; }
+
+        public InsuranceClaimRepo(IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
+            _httpContextAccessor = httpContextAccessor;
+            _session = _httpContextAccessor.HttpContext.Session;
+
+            _Configure = configuration;
             client = new HttpClient();
         }
 
         public async Task<List<InsurerDetails>> GetAllInsurerDetails()
         {
-           
-
+            String baseAddress = "https://localhost:44332/api/InsuranceClaim/";
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var token = _httpContextAccessor.HttpContext.Session.GetString("token");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await client.GetAsync(baseAddress + "GetAllInsurerDetail");
-            
 
             if (response.IsSuccessStatusCode)
             {

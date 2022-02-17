@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Himanshu\\source\\repos\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj": {}
+    "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Himanshu\\source\\repos\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj": {
+    "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Himanshu\\source\\repos\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj",
+        "projectUniqueName": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj",
         "projectName": "IPTreatmentService",
-        "projectPath": "C:\\Users\\Himanshu\\source\\repos\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj",
+        "projectPath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentService\\IPTreatmentService\\IPTreatmentService.csproj",
         "packagesPath": "C:\\Users\\Himanshu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Himanshu\\source\\repos\\IPTreatmentService\\IPTreatmentService\\obj\\",
+        "outputPath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\IPTreatmentService\\IPTreatmentService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -42,6 +42,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"

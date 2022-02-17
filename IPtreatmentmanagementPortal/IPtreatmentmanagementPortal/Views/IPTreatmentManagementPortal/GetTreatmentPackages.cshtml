@@ -4,7 +4,7 @@
     ViewData["Title"] = "GetTreatmentPackages";
 }
 
-<h1>GetTreatmentPackages</h1>
+<h1>Treatment Packages</h1>
 
 @{ if (ViewBag.msg != null)
     {
@@ -33,7 +33,6 @@
                     <th>
                         @Html.DisplayNameFor(model => model.TreatmentDuration)
                     </th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -58,14 +57,17 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.TreatmentDuration)
                         </td>
-                        <td>
+                        @*<td>
                             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                             @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                        </td>
+                        </td>*@
                     </tr>
                 }
             </tbody>
         </table>
     }
 }
+<div>
+    <a class="nav-link text-dark" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="Index">Go back to dashboard</a>
+</div>

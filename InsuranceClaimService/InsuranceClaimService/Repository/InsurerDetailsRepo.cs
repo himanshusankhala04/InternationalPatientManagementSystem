@@ -10,7 +10,7 @@ namespace InsuranceClaimService.Repository
 {
     public class InsurerDetailsRepo : IInsurerDetailsRepo
     {
-        String baseAddress = "https://localhost:44354/api/";
+        String baseAddress = "https://localhost:44366/api/";
         HttpClient client;
         public InsurerDetailsRepo()
         {
@@ -61,7 +61,7 @@ namespace InsuranceClaimService.Repository
             {
                 throw new Exception();
             }
-            HttpResponseMessage response = client.GetAsync(baseAddress + "Treatment").Result;
+            HttpResponseMessage response = client.GetAsync(baseAddress + "Treatment/GetTreatmentDetails").Result;
 
             if (response.IsSuccessStatusCode)
             {

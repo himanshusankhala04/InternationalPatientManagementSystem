@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using IPTreatmentService.Model;
 using IPTreatmentService.Repository;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IPTreatmentService.Controllers
 {
@@ -24,6 +25,7 @@ namespace IPTreatmentService.Controllers
 
         [HttpGet]
         [Route("[action]")]
+        [Authorize]
         public IActionResult GetPatientDetails()
         {
             List<PatientDetail> list = _patientobj.GetDetails();

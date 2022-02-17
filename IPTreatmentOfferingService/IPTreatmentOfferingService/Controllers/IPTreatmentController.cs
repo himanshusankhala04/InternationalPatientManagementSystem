@@ -1,5 +1,6 @@
 ﻿using IPTreatmentOfferingService.Model;
 using IPTreatmentOfferingService.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -23,6 +24,7 @@ namespace IPTreatmentOfferingService.Controllers
 
         [HttpGet]
         [Route("[action]")]
+        [Authorize]
         public IActionResult IPTreatmentPackages()
         {
             try
@@ -37,6 +39,7 @@ namespace IPTreatmentOfferingService.Controllers
         }
         [HttpGet]
         [Route("[action]/{Name}")]
+        [Authorize]
         public IActionResult IPTreatmentPackageByName(string name)
         {
             try
@@ -57,6 +60,7 @@ namespace IPTreatmentOfferingService.Controllers
         //added
         [HttpGet]
         [Route("[action]/{name}/{ailment}")]
+        [Authorize]
         public IActionResult IPTreatmentPackageByNameAndAilment(string name, AilmentCategory ailment)
         {
             try

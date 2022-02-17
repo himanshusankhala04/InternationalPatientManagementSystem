@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "33r5KGN5e07LLzWq0X4tMn/s2m7X4BOULGDDAcKyn8wLaLlKgHg36LUDT+/7aYxkXP+fZU7hZMpZcFfk8A64iw==",
+  "dgSpecHash": "3Tm8N75sfjQEqOikPb1I6fSBJi7XKM2hZGUrRTum21wZLDN4YBooZtSKSVmaC8V3cG0ROXgHJVyL4CcQ2lox9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Himanshu\\source\\repos\\AuthorizationService\\AuthorizationService\\AuthorizationService.csproj",
+  "projectFilePath": "D:\\CODE\\dockerDemo\\Project\\InternationalPatientManagementSystem\\AuthorizationService\\AuthorizationService\\AuthorizationService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Himanshu\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.9\\microsoft.aspnetcore.authentication.jwtbearer.5.0.9.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

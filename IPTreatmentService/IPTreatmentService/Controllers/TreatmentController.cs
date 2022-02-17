@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using IPTreatmentService.Model;
 using IPTreatmentService.Repository;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IPTreatmentService.Controllers
 {
@@ -21,6 +22,8 @@ namespace IPTreatmentService.Controllers
 
         [HttpGet]
         [Route("[action]")]
+
+        [Authorize]
         public IActionResult GetTreatmentDetails()
         {
 
@@ -33,6 +36,8 @@ namespace IPTreatmentService.Controllers
 
         [HttpPost]
         [Route("api/[Controller]/[action]")]
+
+        [Authorize]
         public IActionResult FormulateTreatmentTimetable(PatientDetail patient)
         {
             try

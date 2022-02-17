@@ -10,7 +10,7 @@ namespace IPTreatmentService.Repository
 {
     public class TreatmentPlanRepo : ITreatmentPlanRepo
     {
-        String baseAddress = "http://localhost:25257/api/";
+        String baseAddress = "http://localhost:44350/api/";
         HttpClient client;
 
         private List<TreatmentPlan> treatmentPlan;

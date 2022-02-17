@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using IPtreatmentmanagementPortal.Model;
 using IPtreatmentmanagementPortal.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,21 +31,33 @@ namespace IPtreatmentmanagementPortal.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            if (ViewBag != null)
+            {
+                ViewBag.msg = "<script> alert('Admin logged in successfully! '); </script>";
+            }
+
             return View();
         }
 
         [HttpGet]
         public async Task<ActionResult<List<InsurerDetails>>> GetInsuranceDetails()
         {
-            
-            var obj = _insuranceClaimRepo.GetAllInsurerDetails();
-            if(obj != null)
+            try
             {
-                return View(await obj);
+                var obj = _insuranceClaimRepo.GetAllInsurerDetails();
+                if (obj != null)
+                {
+                    return View(await obj);
+                }
+                else
+                {
+                    ViewBag.msg = "Data not found!";
+                    return View();
+                }
             }
-            else {
-                ViewBag.msg = "Data not found!";
-                return View();
+            catch
+            {
+                return BadRequest(500);
             }
         }
 
@@ -52,42 +65,63 @@ namespace IPtreatmentmanagementPortal.Controllers
         [HttpGet]
         public async Task<ActionResult<List<SpecialistDetails>>> GetSpecialistDetails()
         {
-            var obj = _treatmentOffering.GetAllSpecialistDetails();
-            if(obj != null)
+            try
             {
-                return View(await obj);
+                var obj = _treatmentOffering.GetAllSpecialistDetails();
+                if(obj != null)
+                {
+                    return View(await obj);
+                }
+                else {
+                    ViewBag.msg = "Data not found!";
+                    return View();
+                }
             }
-            else {
-                ViewBag.msg = "Data not found!";
-                return View();
+            catch
+            {
+                return BadRequest(500);
             }
         }
 
         [HttpGet]
         public async Task<ActionResult<List<IPTreatmentPackage>>> GetTreatmentPackages()
         {
-            var obj = _treatmentOffering.GetAllIPTreatmentPackages();
-            if(obj != null)
+            try
             {
-                return View(await obj);
+                var obj = _treatmentOffering.GetAllIPTreatmentPackages();
+                if(obj != null)
+                {
+                    return View(await obj);
+                }
+                else {
+                    ViewBag.msg = "Data not found!";
+                    return View();
+                }
             }
-            else {
-                ViewBag.msg = "Data not found!";
-                return View();
+            catch
+            {
+                return BadRequest(500);
             }
         }
 
         [HttpGet]
         public async Task<ActionResult<List<PatientDetails>>> GetPatientDetails()
         {
-            var obj =  _treatment.GetAllPatientDetails();
-            if(obj != null)
+            try
             {
-                return View(await obj);
+                var obj =  _treatment.GetAllPatientDetails();
+                if(obj != null)
+                {
+                    return View(await obj);
+                }
+                else {
+                    ViewBag.msg = "Data not found!";
+                    return View();
+                }
             }
-            else {
-                ViewBag.msg = "Data not found!";
-                return View();
+            catch
+            {
+                return BadRequest(500);
             }
         }
 
@@ -96,15 +130,29 @@ namespace IPtreatmentmanagementPortal.Controllers
         [HttpGet]
         public async Task<ActionResult<List<TreatmentPlan>>> GetTreatmentPlans()
         {
-            var obj =  _treatment.GetAllTreatmentDetails();
-            if(obj != null)
+            try
             {
-                return View(await obj);
+                var obj =  _treatment.GetAllTreatmentDetails();
+                if(obj != null)
+                {
+                    return View(await obj);
+                }
+                else {
+                    ViewBag.msg = "Data not found!";
+                    return View();
+                }
             }
-            else {
-                ViewBag.msg = "Data not found!";
-                return View();
+            catch
+            {
+                return BadRequest(500);
             }
+        }
+
+        public IActionResult Logout()
+        {
+            _httpContextAccessor.HttpContext.Session.Clear();
+            ViewBag.Message = "Logged out!";
+            return RedirectToAction("Login", "Login", new { area = "" });
         }
 
     }
