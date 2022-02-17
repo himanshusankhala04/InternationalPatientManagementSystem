@@ -28,12 +28,14 @@ namespace IPtreatmentmanagementPortal.Repository
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly ISession _session;
         HttpClient client;
-        public AuthorizationRepo(IHttpContextAccessor httpContextAccessor)
+        string endpoint = "";
+
+        private IConfiguration _Configure { get; set; }
+        public AuthorizationRepo(IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
-           
-
-
+            _Configure = configuration;
             client = new HttpClient();
+            endpoint = _Configure.GetValue<string>("AuthorizationServiceUrl");
 
             _httpContextAccessor = httpContextAccessor;
             _session = _httpContextAccessor.HttpContext.Session;
@@ -41,11 +43,11 @@ namespace IPtreatmentmanagementPortal.Repository
         public string LoginService(AdminDetails admin)
         {
             StringContent content = new StringContent(JsonConvert.SerializeObject(admin), Encoding.UTF8, "application/json");
-            string endpoint = "https://localhost:44335/api/Auth/login";
-            client.BaseAddress = new Uri(endpoint);
+            //string endpoint = "https://localhost:44335/api/Auth/login";
+
             var contentType = new MediaTypeWithQualityHeaderValue("application/json");
             client.DefaultRequestHeaders.Accept.Add(contentType);
-            var Response = client.PostAsync(endpoint, content);
+            var Response = client.PostAsync(endpoint+ "api/Auth/login", content);
             
                 var result = Response.Result;
                 if (result.IsSuccessStatusCode)

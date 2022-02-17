@@ -16,12 +16,13 @@ namespace IPtreatmentmanagementPortal.Repository
         HttpClient client;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly ISession _session;
+        String baseAddress = "";
         private IConfiguration _Configure { get; set; }
         public IPTreatmentRepo(IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
             _httpContextAccessor = httpContextAccessor;
             _session = _httpContextAccessor.HttpContext.Session;
-
+            baseAddress = _Configure.GetValue<string>("IPTreatmentServiceUrl");
             _Configure = configuration;
             client = new HttpClient();
         }
@@ -33,13 +34,15 @@ namespace IPtreatmentmanagementPortal.Repository
 
         public async Task<List<PatientDetails>> GetAllPatientDetails()
         {
-            String baseAddress = "https://localhost:44366/api/Patient/";
+            //String baseAddress = "https://localhost:44366/api/Patient/";
+            //String baseAddress = "https://iptreatmentsercvice.azurewebsites.net/api/Patient/";
+        
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var token = _httpContextAccessor.HttpContext.Session.GetString("token");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            HttpResponseMessage response = await client.GetAsync(baseAddress + "GetPatientDetails");
+            HttpResponseMessage response = await client.GetAsync(baseAddress  + "api/Patient/GetPatientDetails");
            
             if (response.IsSuccessStatusCode)
             {
@@ -54,13 +57,14 @@ namespace IPtreatmentmanagementPortal.Repository
 
         public async Task<List<TreatmentPlan>> GetAllTreatmentDetails()
         {
-            String baseAddress = "https://localhost:44366/api/Treatment/";
+            //String baseAddress = "https://localhost:44366/api/Treatment/";
+            //String baseAddress = "https://iptreatmentsercvice.azurewebsites.net/api/Treatment/";
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var token = _httpContextAccessor.HttpContext.Session.GetString("token");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            HttpResponseMessage response = await client.GetAsync(baseAddress + "GetTreatmentDetails");
+            HttpResponseMessage response = await client.GetAsync(baseAddress + "api/Treatment/GetTreatmentDetails");
             
 
             if (response.IsSuccessStatusCode)

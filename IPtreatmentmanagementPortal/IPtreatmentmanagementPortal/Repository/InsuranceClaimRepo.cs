@@ -13,6 +13,7 @@ namespace IPtreatmentmanagementPortal.Repository
 {
     public class InsuranceClaimRepo : IInsuranceClaimRepo
     {
+        String baseAddress = "";
         HttpClient client;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly ISession _session;
@@ -25,16 +26,18 @@ namespace IPtreatmentmanagementPortal.Repository
 
             _Configure = configuration;
             client = new HttpClient();
+            baseAddress = _Configure.GetValue<string>("InsuranceClaimServiceUrl");
         }
 
         public async Task<List<InsurerDetails>> GetAllInsurerDetails()
         {
-            String baseAddress = "https://localhost:44332/api/InsuranceClaim/";
+            //String baseAddress = "https://localhost:44332/api/InsuranceClaim/";
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var token = _httpContextAccessor.HttpContext.Session.GetString("token");
+
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await client.GetAsync(baseAddress + "GetAllInsurerDetail");
+            HttpResponseMessage response = await client.GetAsync(baseAddress + "api/InsuranceClaim/GetAllInsurerDetail");
 
             if (response.IsSuccessStatusCode)
             {
@@ -49,9 +52,9 @@ namespace IPtreatmentmanagementPortal.Repository
 
         public int GetBalanceAmmount(InitiateClaim initiateClaim)
         {
-            String baseAddress = "https://localhost:44354/api/InsuranceClaim/";
+            //String baseAddress = "https://localhost:44354/api/InsuranceClaim/";
 
-            HttpResponseMessage response = client.GetAsync(baseAddress + "InitiateClaim").Result;
+            HttpResponseMessage response = client.GetAsync(baseAddress + "api/InsuranceClaim/InitiateClaim").Result;
             int balance;
 
             if (response.IsSuccessStatusCode)
@@ -70,9 +73,9 @@ namespace IPtreatmentmanagementPortal.Repository
 
         public InsurerDetails GetInsurerByPackageName(string insurerPackageName)
         {
-            String baseAddress = "https://localhost:44354/api/InsuranceClaimController/";
+            //String baseAddress = "https://localhost:44354/api/InsuranceClaim/";
 
-            HttpResponseMessage response = client.GetAsync(baseAddress + "GetInsurerByPackageName").Result;
+            HttpResponseMessage response = client.GetAsync(baseAddress + "api/InsuranceClaim/GetInsurerByPackageName").Result;
             InsurerDetails insurer;
 
             if (response.IsSuccessStatusCode)

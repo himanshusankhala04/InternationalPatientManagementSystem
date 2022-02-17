@@ -36,10 +36,7 @@ namespace IPtreatmentmanagementPortal.Controllers
         [HttpPost]
         public IActionResult Login(AdminDetails admin)
         {
-            if (ViewBag != null)
-            {
-                ViewBag.msg = "<script> alert('Logged out!'); </script>";
-            }
+            
             if (ModelState.IsValid) { 
                 IActionResult response = Unauthorized();
                 String success = _authRepo.LoginService(admin);
@@ -50,6 +47,7 @@ namespace IPtreatmentmanagementPortal.Controllers
                 }
                 
             }
+            ViewBag.msg = "Wrong Username or Password!";
             return View();
         }
     }
