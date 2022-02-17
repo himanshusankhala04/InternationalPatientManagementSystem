@@ -1,13 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\AuthorizationService\\AuthorizationService",
-    "\\AuthorizationService\\AuthorizationService\\Controllers",
-    "\\InsuranceClaimService",
     "\\InsuranceClaimService\\InsuranceClaimService",
     "\\InsuranceClaimService\\InsuranceClaimService\\Controllers",
-    "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal\\Views\\IPTreatmentManagementPortal"
+    "\\IPtreatmentmanagementPortal",
+    "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal",
+    "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal\\Views",
+    "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal\\Views\\Login"
   ],
-  "SelectedNode": "\\InsuranceClaimService\\InsuranceClaimService.sln",
+  "SelectedNode": "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal\\Views\\Login\\Login.cshtml",
   "PreviewInSolutionExplorer": false
 }
