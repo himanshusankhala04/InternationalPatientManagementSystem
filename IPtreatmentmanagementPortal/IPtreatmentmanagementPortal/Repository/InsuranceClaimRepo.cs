@@ -57,7 +57,7 @@ namespace IPtreatmentmanagementPortal.Repository
 
         public int GetBalanceAmmount(int id, string InsuranceProvider)
         {
-            //String baseAddress = "https://localhost:44354/api/InsuranceClaim/";
+            //String baseAddress = "https://localhost:44332/api/InsuranceClaim/InitiateClaim";
             TreatmentStatus ts = _context.TreatmentStatuses.FirstOrDefault(x => x.Id == id);
             InitiateClaim ic = new InitiateClaim()
             {
@@ -73,7 +73,7 @@ namespace IPtreatmentmanagementPortal.Repository
             var token = _httpContextAccessor.HttpContext.Session.GetString("token");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            HttpResponseMessage response = client.PostAsync(baseAddress + "api/InsuranceClaim/InitiateClaim",content).Result;
+            HttpResponseMessage response = client.PostAsync(baseAddress + "api/InsuranceClaim/InitiateClaim", content).Result;
             int balance;
 
             if (response.IsSuccessStatusCode)

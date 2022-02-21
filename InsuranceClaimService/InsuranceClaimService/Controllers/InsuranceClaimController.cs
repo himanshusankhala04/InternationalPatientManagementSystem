@@ -60,7 +60,6 @@ namespace InsuranceClaimService.Controllers
 
         [HttpPost]
         [Route("[action]")]
-        [Authorize]
         public IActionResult InitiateClaim(InitiateClaim initiateClaim)
         {
             try

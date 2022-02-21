@@ -38,7 +38,6 @@ namespace IPTreatmentOfferingService.Controllers
         }
         [HttpGet]
         [Route("[action]/{Name}")]
-        [Authorize]
         public IActionResult IPTreatmentPackageByName(string name)
         {
             try

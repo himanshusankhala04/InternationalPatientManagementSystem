@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 using InsuranceClaimService.Model;
 using System.Net.Http;
 using Newtonsoft.Json;
+using IPTreatmentOfferingService.Model;
 
 namespace InsuranceClaimService.Repository
 {
     public class InsurerDetailsRepo : IInsurerDetailsRepo
     {
-        String baseAddress = "https://localhost:44366/api/";
+        String baseAddress = "https://localhost:44350/api/";
         HttpClient client;
         public InsurerDetailsRepo()
         {
@@ -51,27 +52,26 @@ namespace InsuranceClaimService.Repository
 
         public int GetBalanceAmount(InitiateClaim initiateClaim)
         {
-            List<TreatmentPlan> treatmentPlanList;
+            IPTreatmentPackage treatmentPackage;
             var insurer = _insurerDetails.FirstOrDefault(p => p.InsurerName.ToLower() == initiateClaim.InsurerName.ToLower());
             if (insurer == null)
             {
                 throw new Exception();
             }
-            HttpResponseMessage response = client.GetAsync(baseAddress + "Treatment/GetTreatmentDetails").Result;
+            HttpResponseMessage response = client.GetAsync(baseAddress + "IPTreatment/IPTreatmentPackageByNameAndAilment/"+initiateClaim.TreatmentPackageName+"/"+initiateClaim.Ailment).Result;
 
             if (response.IsSuccessStatusCode)
             {
                 string data = response.Content.ReadAsStringAsync().Result;
                 
-                treatmentPlanList = JsonConvert.DeserializeObject<List<TreatmentPlan>>(data);
+                treatmentPackage = JsonConvert.DeserializeObject<IPTreatmentPackage>(data);
                 
-                var treatmentPlan = treatmentPlanList.FirstOrDefault(x => x.PackageName.ToLower() == initiateClaim.TreatmentPackageName.ToLower() && x.Ailment == initiateClaim.Ailment);
-                if (treatmentPlan == null)
+                if (treatmentPackage == null)
                 {
                     throw new Exception();
                 }
 
-                return Math.Abs(treatmentPlan.Cost - insurer.InsuranceAmountLimit);
+                return Math.Abs(treatmentPackage.Cost - insurer.InsuranceAmountLimit);
              }
             else
             {

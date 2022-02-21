@@ -156,3 +156,4 @@ D:\CODE\dockerDemo\Project\InternationalPatientManagementSystem\IPtreatmentmanag
 D:\CODE\dockerDemo\Project\InternationalPatientManagementSystem\IPtreatmentmanagementPortal\IPtreatmentmanagementPortal\obj\Debug\net5.0\Razor\Views\IPTreatmentManagementPortal\RegisterPatient.cshtml.g.cs
 D:\CODE\dockerDemo\Project\InternationalPatientManagementSystem\IPtreatmentmanagementPortal\IPtreatmentmanagementPortal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\CODE\dockerDemo\Project\InternationalPatientManagementSystem\IPtreatmentmanagementPortal\IPtreatmentmanagementPortal\obj\Debug\net5.0\Razor\Views\IPTreatmentManagementPortal\GetTreatmentStatus.cshtml.g.cs
+D:\CODE\dockerDemo\Project\InternationalPatientManagementSystem\IPtreatmentmanagementPortal\IPtreatmentmanagementPortal\obj\Debug\net5.0\Razor\Views\IPTreatmentManagementPortal\InitiateClaim.cshtml.g.cs

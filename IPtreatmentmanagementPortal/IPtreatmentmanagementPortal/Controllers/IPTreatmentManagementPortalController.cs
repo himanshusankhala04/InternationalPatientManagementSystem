@@ -212,8 +212,8 @@ namespace IPtreatmentmanagementPortal.Controllers
             return View();
         }
 
-        [HttpGet]
-        [Route("[action]/{id}/{InsuranceProvider}")]
+        [HttpPost]
+        [Route("[action]/{id}")]
         public IActionResult InitiateClaim(int id, string InsuranceProvider)
         {
             try

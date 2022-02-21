@@ -1,12 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\IPtreatmentmanagementPortal",
     "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal",
     "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal\\Controllers",
-    "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal\\Repository",
-    "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal\\Views\\Login"
+    "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal\\Repository"
   ],
-  "SelectedNode": "\\IPtreatmentmanagementPortal\\IPtreatmentmanagementPortal\\Repository\\IPTreatmentRepo.cs",
+  "SelectedNode": "\\IPtreatmentmanagementPortal",
   "PreviewInSolutionExplorer": false
 }

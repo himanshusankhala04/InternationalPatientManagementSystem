@@ -117,9 +117,10 @@
 
                     @if (item.Status == true)
                     {
-                        <td>
-                            <a class="nav-link text-dark" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="InitiateClaim">InitiateClaim</a>
-                        </td>
+                <td>
+                    @*<a class="nav-link text-dark" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="InitiateClaim">InitiateClaim</a>*@
+                    @Html.ActionLink("InitiateClaim", "InitiateClaim", new {  id=item.Id  })
+                </td>
                     }
                     else
                     {

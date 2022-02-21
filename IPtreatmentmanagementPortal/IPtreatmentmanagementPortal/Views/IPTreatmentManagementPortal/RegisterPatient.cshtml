@@ -48,9 +48,17 @@
                 <span asp-validation-for="Age" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Ailment" class="control-label"></label>
+                @*<label asp-for="Ailment" class="control-label"></label>
                 <input asp-for="Ailment" class="form-control" />
-                <span asp-validation-for="Ailment" class="text-danger"></span>
+                <span asp-validation-for="Ailment" class="text-danger"></span>*@
+                <label class="control-label">Ailment</label>
+                <select class="form-control" id="PackageName" asp-for="Ailment">
+                    <option>Select</option>
+                    
+                    <option value="0"> Orthopaedics </option>
+                    <option value="1"> Urology </option>
+                    
+                </select>
             </div>
             <div class="form-group">
                 @*<label asp-for="TreatmentPackageName" class="control-label"></label>
