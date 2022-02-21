@@ -31,7 +31,7 @@ namespace IPTreatmentOfferingService.Repository
             },
             new IPTreatmentPackage
             {
-                TreatmentPackageID=1,
+                TreatmentPackageID=3,
                 Ailment=AilmentCategory.Urology,
                 TreatmentPackageName="Package 1",
                 TestDetails="OPT 1,OPT 2",
@@ -40,7 +40,7 @@ namespace IPTreatmentOfferingService.Repository
             },
             new IPTreatmentPackage
             {
-                TreatmentPackageID=1,
+                TreatmentPackageID=4,
                 Ailment=AilmentCategory.Urology,
                 TreatmentPackageName="Package 2",
                 TestDetails="OPT 1,OPT 2",

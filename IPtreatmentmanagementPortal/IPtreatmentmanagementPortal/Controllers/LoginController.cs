@@ -47,7 +47,7 @@ namespace IPtreatmentmanagementPortal.Controllers
                 }
                 
             }
-            ViewBag.msg = "Wrong Username or Password!";
+            ViewBag.msg = "* Wrong Username or Password!";
             return View();
         }
     }

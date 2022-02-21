@@ -10,7 +10,7 @@ namespace IPTreatmentService.Repository
 {
     public class TreatmentPlanRepo : ITreatmentPlanRepo
     {
-        String baseAddress = "http://localhost:44350/api/";
+        String baseAddress = "https://localhost:44350/api/";
         HttpClient client;
 
         private List<TreatmentPlan> treatmentPlan;
@@ -51,7 +51,7 @@ namespace IPTreatmentService.Repository
         {
             IPTreatmentPackage treatmentPackage;
             SpecialistDetails specialist;
-            HttpResponseMessage response = client.GetAsync(baseAddress + "IPTreatment/IPTreatmentPackageByNameAndAilment/"+ patient.TreatmentPackageName +"/" + patient.Ailment).Result;
+            HttpResponseMessage response = client.GetAsync(baseAddress + "IPTreatment/IPTreatmentPackageByNameAndAilment/" + patient.TreatmentPackageName +"/" + patient.Ailment).Result;
             if (response.IsSuccessStatusCode)
             {
                 string data = response.Content.ReadAsStringAsync().Result;

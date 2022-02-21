@@ -24,7 +24,6 @@ namespace IPTreatmentOfferingService.Controllers
 
         [HttpGet]
         [Route("[action]")]
-        [Authorize]
         public IActionResult IPTreatmentPackages()
         {
             try
@@ -60,7 +59,6 @@ namespace IPTreatmentOfferingService.Controllers
         //added
         [HttpGet]
         [Route("[action]/{name}/{ailment}")]
-        [Authorize]
         public IActionResult IPTreatmentPackageByNameAndAilment(string name, AilmentCategory ailment)
         {
             try

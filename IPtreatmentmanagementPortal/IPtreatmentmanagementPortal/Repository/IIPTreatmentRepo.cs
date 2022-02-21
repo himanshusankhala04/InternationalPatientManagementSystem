@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using IPtreatmentmanagementPortal.Model;
+using IPtreatmentmanagementPortal.Models;
 
 namespace IPtreatmentmanagementPortal.Repository
 {
@@ -10,7 +11,9 @@ namespace IPtreatmentmanagementPortal.Repository
     {
         public Task<List<PatientDetails>> GetAllPatientDetails();
         public Task<List<TreatmentPlan>> GetAllTreatmentDetails();
-        public TreatmentPlan FormulateTreatmentTimetable(PatientDetails patient);
-        
+        public void FormulateTreatmentTimetable(PatientDetails patient);
+
+        public List<TreatmentStatus> GetAllTreatmentStatus();
+        public void UpdateTreatmentStatus(int id, int balance);
     }
 }

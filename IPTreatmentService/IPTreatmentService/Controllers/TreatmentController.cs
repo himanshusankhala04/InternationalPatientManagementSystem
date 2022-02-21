@@ -37,7 +37,6 @@ namespace IPTreatmentService.Controllers
         [HttpPost]
         [Route("api/[Controller]/[action]")]
 
-        [Authorize]
         public IActionResult FormulateTreatmentTimetable(PatientDetail patient)
         {
             try

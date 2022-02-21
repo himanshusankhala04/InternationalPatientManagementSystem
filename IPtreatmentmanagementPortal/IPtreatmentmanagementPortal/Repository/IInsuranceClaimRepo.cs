@@ -10,6 +10,6 @@ namespace IPtreatmentmanagementPortal.Repository
     {
         public Task<List<InsurerDetails>> GetAllInsurerDetails();
         public InsurerDetails GetInsurerByPackageName(String insurerPackageName);
-        public int GetBalanceAmmount(InitiateClaim initiateClaim);
+        public int GetBalanceAmmount(int id, string InsuranceProvider);
     }
 }

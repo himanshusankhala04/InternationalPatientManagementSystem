@@ -21,7 +21,6 @@ namespace InsuranceClaimService.Repository
         {
             new InsurerDetail
             {
-                InsurerId = 1,
                 InsurerName = "Insurer Name 1",
                 InsurerPackageName = "Insurance Package 1",
                 InsuranceAmountLimit = 1000,
@@ -29,7 +28,6 @@ namespace InsuranceClaimService.Repository
             },
             new InsurerDetail
             {
-                InsurerId = 2,
                 InsurerName = "Insurer Name 2",
                 InsurerPackageName = "Insurance Package 2",
                 InsuranceAmountLimit = 1500,
@@ -37,7 +35,6 @@ namespace InsuranceClaimService.Repository
             },
             new InsurerDetail
             {
-                InsurerId = 3,
                 InsurerName = "Insurer Name 3",
                 InsurerPackageName = "Insurance Package 3",
                 InsuranceAmountLimit = 1200,
@@ -45,7 +42,6 @@ namespace InsuranceClaimService.Repository
             },
             new InsurerDetail
             {
-                InsurerId = 4,
                 InsurerName = "Insurer Name 4",
                 InsurerPackageName = "Insurance Package 4",
                 InsuranceAmountLimit = 2000,

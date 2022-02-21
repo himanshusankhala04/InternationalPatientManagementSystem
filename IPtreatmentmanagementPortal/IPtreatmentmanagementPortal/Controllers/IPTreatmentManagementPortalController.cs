@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using IPtreatmentmanagementPortal.Model;
+using IPtreatmentmanagementPortal.Models;
 using IPtreatmentmanagementPortal.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -68,7 +69,7 @@ namespace IPtreatmentmanagementPortal.Controllers
             try
             {
                 var obj = _treatmentOffering.GetAllSpecialistDetails();
-                if(obj != null)
+                if (obj != null)
                 {
                     return View(await obj);
                 }
@@ -89,7 +90,7 @@ namespace IPtreatmentmanagementPortal.Controllers
             try
             {
                 var obj = _treatmentOffering.GetAllIPTreatmentPackages();
-                if(obj != null)
+                if (obj != null)
                 {
                     return View(await obj);
                 }
@@ -109,8 +110,8 @@ namespace IPtreatmentmanagementPortal.Controllers
         {
             try
             {
-                var obj =  _treatment.GetAllPatientDetails();
-                if(obj != null)
+                var obj = _treatment.GetAllPatientDetails();
+                if (obj != null)
                 {
                     return View(await obj);
                 }
@@ -125,15 +126,15 @@ namespace IPtreatmentmanagementPortal.Controllers
             }
         }
 
-       
+
 
         [HttpGet]
         public async Task<ActionResult<List<TreatmentPlan>>> GetTreatmentPlans()
         {
             try
             {
-                var obj =  _treatment.GetAllTreatmentDetails();
-                if(obj != null)
+                var obj = _treatment.GetAllTreatmentDetails();
+                if (obj != null)
                 {
                     return View(await obj);
                 }
@@ -155,5 +156,76 @@ namespace IPtreatmentmanagementPortal.Controllers
             return RedirectToAction("Login", "Login", new { area = "" });
         }
 
+        [HttpGet]
+        public IActionResult RegisterPatient()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult RegisterPatient(PatientDetails patient)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _treatment.FormulateTreatmentTimetable(patient);
+                    return RedirectToAction("GetTreatmentStatus", "IPTreatmentManagementPortal", new { area = "" });
+                }
+                catch
+                {
+                    return BadRequest();
+                }
+
+            }
+            else
+                return BadRequest();
+        }
+
+        [HttpGet]
+        public IActionResult GetTreatmentStatus()
+        {
+            try
+            {
+                var obj = _treatment.GetAllTreatmentStatus();
+                if (obj != null)
+                {
+                    return View(obj);
+                }
+                else
+                {
+                    ViewBag.msg = "Data not found!";
+                    return View();
+                }
+            }
+            catch
+            {
+                return BadRequest(500);
+            }
+        }
+
+
+        [HttpGet]
+        [Route("[action]/{id}")]
+        public IActionResult InitiateClaim(int id)
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [Route("[action]/{id}/{InsuranceProvider}")]
+        public IActionResult InitiateClaim(int id, string InsuranceProvider)
+        {
+            try
+            {
+                int balance = _insuranceClaimRepo.GetBalanceAmmount(id, InsuranceProvider);
+                _treatment.UpdateTreatmentStatus(id, balance);
+                return RedirectToAction("GetTreatmentStatus", "IPTreatmentManagementPortal", new { area = "" });
+            }
+            catch 
+            {
+                return BadRequest(500);
+            }
+        }
     }
 }

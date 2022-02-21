@@ -13,9 +13,7 @@ namespace IPtreatmentmanagementPortal.Model
     }
     public class InitiateClaim
     {
-        public int ClaimId { get; set; }
         public String PatientName { get; set; }
-
         public AilmentCategory Ailment { get; set; }
         public String TreatmentPackageName { get; set; }
         public String InsurerName { get; set; }

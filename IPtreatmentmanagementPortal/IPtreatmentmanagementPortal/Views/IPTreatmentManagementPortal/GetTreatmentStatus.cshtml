@@ -1,0 +1,145 @@
+﻿@model IEnumerable<IPtreatmentmanagementPortal.Models.TreatmentStatus>
+
+@{
+    ViewData["Title"] = "GetTreatmentStatus";
+}
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="Index">IPtreatmentmanagementPortal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="RegisterPatient">Register Patient</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="Logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<h1>GetTreatmentStatus</h1>
+
+
+
+@{ if (ViewBag.msg != null)
+    {
+        @ViewBag.msg
+    }
+    else
+    {
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PatientName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ailment)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TreatmentPackageName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SpecialistName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TreatmentComencementDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TreatmentEndDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cost)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BalanceAmount)
+                    </th>
+                    @*<th></th>*@
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PatientName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ailment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TreatmentPackageName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SpecialistName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TreatmentComencementDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TreatmentEndDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cost)
+                    </td>
+
+                    @if (item.Status == true)
+                    {
+                        <td class="text-success">
+                            Ongoing
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="text-danger">
+                            Completed
+                        </td>
+                    }
+
+                    @if (item.Status == true)
+                    {
+                        <td>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="InitiateClaim">InitiateClaim</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BalanceAmount)
+                        </td>
+                    }
+
+                        @*<td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+                    </tr>
+             }
+            </tbody>
+        </table>
+    }
+}
+
+<div>
+    <a class="nav-link text-dark" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="Index">Go back to dashboard</a>
+</div>

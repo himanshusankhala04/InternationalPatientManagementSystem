@@ -1,0 +1,65 @@
+﻿@model IPtreatmentmanagementPortal.Model.PatientDetails
+
+@{
+    ViewData["Title"] = "InitiateClaim";
+}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="Index">IPtreatmentmanagementPortal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="RegisterPatient">Register Patient</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="Logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<h1>InitiateClaim</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="InitiateClaim" method="get">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label class="control-label">Insurance Provider</label>
+                <select class="form-control" name="InsuranceProvider" id="InsurerProvider">
+                    <option>Select</option>
+
+                    <option> Insurer Name 1 </option>
+                    <option> Insurer Name 2 </option>
+                    <option> Insurer Name 3 </option>
+                    <option> Insurer Name 4 </option>
+
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="InitiateClaim" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -13,7 +13,6 @@ namespace InsuranceClaimService.Model
     }
     public class InitiateClaim
     {
-        public int ClaimId { get; set; }
         public String PatientName { get; set; }
 
         public AilmentCategory Ailment { get; set; }

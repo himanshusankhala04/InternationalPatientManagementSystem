@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IPtreatmentmanagementPortal.Models;
 using IPtreatmentmanagementPortal.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -12,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+
+using Microsoft.EntityFrameworkCore;
 
 namespace IPtreatmentmanagementPortal
 {
@@ -27,6 +30,7 @@ namespace IPtreatmentmanagementPortal
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<TreatmentStatusContext>(op => op.UseSqlServer(Configuration["ConnectionStrings:TreatmentStatusContext"]));
 
             services.AddScoped<IInsuranceClaimRepo, InsuranceClaimRepo>();
             services.AddScoped<IAuthorizationRepo, AuthorizationRepo>();

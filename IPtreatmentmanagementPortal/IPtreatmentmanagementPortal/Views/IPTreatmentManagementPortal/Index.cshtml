@@ -5,7 +5,30 @@
     ViewData["Title"] = "Dashboard";
 }
 
-
+<header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="Index">IPtreatmentmanagementPortal</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="RegisterPatient">Register Patient</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="Logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
 <div id="wrapper">
 
@@ -35,7 +58,7 @@
                         <div class="card border-left-primary shadow h-100 py-2">
                             <a class="btn btn" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="GetTreatmentPackages">
                                 <div class="card-body">
-                                    View Treatment Packages
+                                    Treatment Packages
 
                                 </div>
                             </a>
@@ -43,12 +66,25 @@
                     </div>
 
                     <!-- View Patients Card  -->
-                    <div class="col-xl-3 col-md-6 mb-4">
+                    @*<div class="col-xl-3 col-md-6 mb-4">
 
                         <div class="card border-left-success shadow h-100 py-2">
                             <a class="btn btn" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="GetPatientDetails">
                                 <div class="card-body">
                                     View Patients
+
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>*@
+                    <!-- View Treatment Timetable Card  -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <a class="btn btn" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="GetTreatmentStatus">
+                                <div class="card-body">
+                                   Treatment Timetable
 
                                 </div>
                             </a>
@@ -62,7 +98,7 @@
                         <div class="card border-left-info shadow h-100 py-2">
                             <a class="btn btn" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="GetSpecialistDetails">
                                 <div class="card-body">
-                                    View Specialists
+                                    Specialists
 
                                 </div>
                             </a>
@@ -76,7 +112,7 @@
                         <div class="card border-left-warning shadow h-100 py-2">
                             <a class="btn btn" asp-area="" asp-controller="IPtreatmentmanagementPortal" asp-action="GetInsuranceDetails">
                                 <div class="card-body">
-                                    View Insurance Providers
+                                    Insurance Providers
 
                                 </div>
                             </a>
@@ -85,7 +121,7 @@
                     </div>
 
                     <!-- View All Treatment Plans Card -->
-                    <div class="col">
+                    @*<div class="col">
 
 
                         <div class="card border-left-warning shadow h-100 py-2">
@@ -98,7 +134,7 @@
 
                             </a>
                         </div>
-                    </div>
+                    </div>*@
                 </div>
 
 
